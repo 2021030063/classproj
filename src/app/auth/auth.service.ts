@@ -28,9 +28,9 @@ export class AuthService {
         // Signed in
         this.isAuthenticated = true;
         localStorage.setItem('isAuthenticated', 'true');
-        localStorage.setItem('user', email);
+        this.user = userCredential.user.uid;
+        localStorage.setItem('user', this.user);
         this.router.navigate(['/tabs/tab1']);
-        this.user = userCredential.user.email;
       })
       .catch((error) => {
         // const errorCode = error.code;
