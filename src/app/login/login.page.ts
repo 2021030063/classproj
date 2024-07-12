@@ -43,9 +43,7 @@ export class LoginPage {
       const { username, password } = this.loginForm.value;
       // Handle the login logic here
       console.log('Login with username:', username, 'and password:', password);
-      if (!this.authService.login(username, password)) {
-        console.error('Invalid username or password');
-      }
+      this.authService.login(username, password);
     }
   }
 }
