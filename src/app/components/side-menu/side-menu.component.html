@@ -4,7 +4,7 @@
       <ion-menu-toggle id="logoutBtn"></ion-menu-toggle>
       <ion-title>Menu Content</ion-title>
       <ion-buttons slot="start">
-          <ion-icon name="close" (click)="closeMenu()"></ion-icon>
+        <ion-icon name="close" (click)="closeMenu()"></ion-icon>
       </ion-buttons>
       <ion-buttons slot="end">
         <ion-icon name="log-out" (click)="logout()"></ion-icon>
@@ -14,21 +14,12 @@
   <ion-content class="ion-padding">
     <ion-list>
     @for (item of pages; track $index) {
-      <ion-item [routerLink]="item.redirect">
-        <ion-menu-toggle>
-          <ion-icon slot="start" [name]="item.icon"></ion-icon>
+      <ion-item [routerLink]="item.redirect" (click)="closeMenu()">
+        <ion-icon slot="start" [name]="item.icon"></ion-icon>
             {{item.name}}
-          <ion-icon slot="end" name="chevron-forward" style="color: gray"></ion-icon>
-        </ion-menu-toggle>
+        <ion-icon slot="end" name="chevron-forward" style="color: gray"></ion-icon>
       </ion-item>
     }
-    <ion-item (click)="logout()">
-      <ion-menu-toggle>
-        <ion-icon slot="start" name="log-out"></ion-icon>
-          Logout
-        <ion-icon slot="end" name="chevron-forward" style="color: gray"></ion-icon>
-      </ion-menu-toggle>
-    </ion-item>
   </ion-list>
   </ion-content>
 </ion-menu>

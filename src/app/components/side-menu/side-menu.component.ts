@@ -1,9 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonMenu, IonList, IonItem, IonButton, IonButtons, IonMenuToggle } from "@ionic/angular/standalone";
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonMenu,
+  IonList,
+  IonItem,
+  IonButton,
+  IonButtons,
+  IonMenuToggle,
+} from '@ionic/angular/standalone';
 import { IconsModule } from 'src/app/shared/icons.module';
 import { AuthService } from '../../auth/auth.service';
-
 
 interface page {
   name: string;
@@ -50,7 +60,7 @@ export class SideMenuComponent {
     {
       name: 'Index',
       redirect: '/tabs/tab1',
-      icon: 'home-outline',
+      icon: 'home',
     },
   ];
 }

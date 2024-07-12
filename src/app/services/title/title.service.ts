@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
   providedIn: 'root',
 })
 export class TitleService {
-  private baseTitle: string = 'IonicApp';
+  private baseTitle: string = 'ProyGrupal';
   currentPageTitle: string = '';
 
   constructor(private titleService: Title) {}

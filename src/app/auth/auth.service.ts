@@ -3,16 +3,10 @@ import { Router } from '@angular/router';
 import { initializeApp } from 'firebase/app';
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { environment } from 'src/environments/environment.prod';
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: 'AIzaSyB9fkJKcusBRGFIlCxlhJJ1eL8hdKTvv9Y',
-  authDomain: 'econ-2c747.firebaseapp.com',
-  projectId: 'econ-2c747',
-  storageBucket: 'econ-2c747.appspot.com',
-  messagingSenderId: '917583917644',
-  appId: '1:917583917644:web:5ace19c58fb5f1af9ffae9',
-};
+const firebaseConfig = environment.firebaseConfig
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
