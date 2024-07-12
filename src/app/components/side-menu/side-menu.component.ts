@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
@@ -13,7 +13,7 @@ import {
   IonMenuToggle,
 } from '@ionic/angular/standalone';
 import { IconsModule } from 'src/app/shared/icons.module';
-import { AuthService } from '../../auth/auth.service';
+import { FirebaseService } from '../../auth/firebase.service';
 
 interface page {
   name: string;
@@ -42,7 +42,7 @@ interface page {
   standalone: true,
 })
 export class SideMenuComponent {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: FirebaseService, private router: Router) {}
 
   closeMenu() {
     const button = document.getElementById('logoutBtn') as HTMLButtonElement;
@@ -53,6 +53,7 @@ export class SideMenuComponent {
     if (confirm('Are you sure you want to log out?')) {
       this.auth.logout();
       this.closeMenu(); // Close menu after logout confirmation
+      this.router.navigate(['/login']);
     }
   }
 

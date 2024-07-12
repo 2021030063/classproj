@@ -9,9 +9,10 @@ import {
 } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { passwordValidator } from '../validators/password-validator';
-import { AuthService } from '../auth/auth.service';
+import { FirebaseService } from '../auth/firebase.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TitleService } from '../services/title/title.service';
+import { TitleService } from '../services/title.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -34,19 +35,23 @@ export class LoginPage {
     this.titleService.setTitle(this.title);
   }
 
-  constructor(private titleService: TitleService, private fb: FormBuilder, private authService: AuthService) {
+  constructor(private titleService: TitleService, private fb: FormBuilder, private auth: FirebaseService, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, passwordValidator()]],
     });
   }
 
-  onLogin() {
+  async onLogin() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       // Handle the login logic here
       // console.log('Login with username:', username, 'and password:', password);
-      this.authService.login(username, password);
+      const logg: boolean = await this.auth.login(username, password);
+      if (logg){
+        // Navigate to the desired page
+        this.router.navigate(['/tabs/tab1']);
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { TitleService } from '../services/title/title.service';
+import { TitleService } from '../services/title.service';
 
 @Component({
   selector: 'app-tab3',
