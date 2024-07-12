@@ -1,0 +1,16 @@
+ion-toggle::part(handle) {
+  background-color: var(--handle-background-color, #fff);
+  background-size: contain;
+}
+/*
+ion-toggle {
+  --handle-background: url("../assets/sun.svg");
+  --handle-background-checked: url("../assets/moon.svg");
+  --handle-background-color: #fff;
+}
+
+
+ion-toggle[ng-reflect-model="true"] {
+  --handle-background-color: #007bff;
+}
+*/

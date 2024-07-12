@@ -1,26 +1,21 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { AuthService } from '../auth/auth.service';
+import { HeaderComponent } from "../components/header/header.component";
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonButton,
+  imports: [
     IonHeader,
     IonToolbar,
     IonTitle,
     IonContent,
-    ExploreContainerComponent,
+    HeaderComponent,
   ],
 })
 export class Tab1Page {
-  constructor(private authService: AuthService) {}
-  logout() {
-    if (confirm('Are you sure you want to log out?')){
-      this.authService.logout();
-    }
-  }
+  title: string = 'Tab 1';
 }

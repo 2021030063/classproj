@@ -1,0 +1,23 @@
+<style>
+  ion-toast.dark-mode-tost {
+  --background: #f4f4fa;
+  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+  --color: #4b4a50;
+}
+
+ion-toast.dark-mode-tost::part(message) {
+  font-style: italic;
+}
+
+ion-toast.dark-mode-tost::part(button) {
+  border-left: 1px solid #d2d2d2;
+  color: #030207;
+  font-size: 15px;
+}
+</style>
+<ion-item>
+  <ion-toggle [(ngModel)]="isDarkModeEnabled" (ionChange)="toggleChange($event)" justify="space-between" id="DarkModeChange">
+    Dark Mode
+  </ion-toggle>
+</ion-item>
+<ion-toast trigger="DarkModeChange" [message]="DarkModeMsg" [duration]="1500" position="top" swipeGesture="vertical" [icon]="Icon" class="dark-mode-tost"></ion-toast>
