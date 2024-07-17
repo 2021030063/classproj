@@ -16,16 +16,11 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../alumnos/alumnos.page').then((m) => m.AlumnosPage),
       },
-      {
-        path: '',
-        redirectTo: '/tabs/meastros',
-        pathMatch: 'full',
-      },
     ],
   },
   {
     path: '',
-    redirectTo: '/tabs/meastros',
+    redirectTo: '/tabs/maestros',
     pathMatch: 'full',
   },
 ];

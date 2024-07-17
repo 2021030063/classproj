@@ -7,26 +7,27 @@
     </ion-toolbar>
   </ion-header>
   <ion-card>
+    <ion-card-title>Agregar</ion-card-title>
     <ion-card-content>
     <ion-label>Nombre</ion-label>
-    <ion-input type="text" [(ngModel)]="name"></ion-input>
+    <ion-input type="text" [(ngModel)]="nombre"></ion-input>
 
     <ion-label>Apellido Paterno</ion-label>
-    <ion-input type="text" [(ngModel)]="apepat"></ion-input>
+    <ion-input type="text" [(ngModel)]="ape"></ion-input>
 
-    <ion-label>Apellido Materno</ion-label>
-    <ion-input type="text" [(ngModel)]="apemat"></ion-input>
+    <ion-label>Edad</ion-label>
+    <ion-input type="text" [(ngModel)]="edad"></ion-input>
 
     <ion-button expand="full" (click)="submit()">Submit</ion-button>
     </ion-card-content>
   </ion-card>
-  <!--
   <ion-list>
-    <ion-item *ngFor="let maestro of maestros">
+  @for (maestro of maestros; track $index) {
+    <ion-item>
       <ion-label>{{maestro.nombre}}</ion-label>
-      <ion-label>{{maestro.apellidoPaterno}}</ion-label>
-      <ion-label>{{maestro.apellidoMaterno}}</ion-label>
+      <ion-label>{{maestro.ape}}</ion-label>
+      <ion-label>{{maestro.edad}}</ion-label>
     </ion-item>
+  }
   </ion-list>
-  -->
 </ion-content>
